@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
@@ -25,12 +26,12 @@ module.exports = {
   module:{
     rules:[
       {
-        test: /\.scss$/i, // any file ending with .scss use ...
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.s?css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -42,8 +43,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App Marian',
+      title: 'Odin Restaurant Page',
       filename: 'index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css"
     })
   ]
 }
