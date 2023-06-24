@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//const postcssPresetEnv = require('postcss-preset-env');
 
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: path.resolve(__dirname, 'src/index.js'),
   },
@@ -27,7 +28,28 @@ module.exports = {
     rules:[
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [
+          MiniCssExtractPlugin.loader, 
+          {
+            loader: "css-loader",
+            options: {importLoaders: 1},
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+
+                    }
+                  ]
+                ]
+              }
+            }
+          }          
+        ],
       },
       {
         test: /\.s?css$/i,
