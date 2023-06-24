@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App Marian',
+      title: 'Odin Restaurant Page',
       filename: 'index.html',
     })
   ]
