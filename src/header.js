@@ -1,3 +1,5 @@
+import createNav from "./nav"
+
 export default function createHeader(){
   
   const header = document.createElement('div');
@@ -35,6 +37,7 @@ export default function createHeader(){
   bookBtn.innerText = "book a table";
 
 
+  header.appendChild(createNav())
   container.appendChild(title);
   container.appendChild(tagline);
   container.appendChild(info);
@@ -43,3 +46,4 @@ export default function createHeader(){
 
   return header;
 }
+
