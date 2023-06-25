@@ -1,18 +1,37 @@
-// @forward "base";
 @use "colors" as *;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 body{
-    font-family: "Open Sans", sans-serif;
+    //font-family: 'Playfair Display', serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: 300;
     //font-size: 1.2rem;
     line-height: 1.6;
-    background-image: linear-gradient(to bottom right, var(--primary-color-light), var(--primary-color-dark) );
-    background-size: cover;
-
     min-height: 100vh;
-    color: var(--color-grey-dark-2);
 }
 
+.btn{
+    cursor: pointer;
+    font-family: inherit;
+    padding: 2rem 3rem;
+    background: none;
+    outline: none;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover,
+.btn:active{
+    transform: translateY(-5px);
+    background: rgba(#fff, 0.2);
+}
 
 $bp-large: 75rem; // 1200px
 $bp-medium: 56.25rem; // 1100px

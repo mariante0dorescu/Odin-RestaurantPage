@@ -10,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
+    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
   },
   devtool: 'source-map',
@@ -34,9 +35,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+        type: "asset/resource"
       }
     ]
   },

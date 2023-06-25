@@ -1,0 +1,63 @@
+@use "colors" as *;
+@use "abstracts" as *;
+
+.container{
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header{
+  background-color: var(--primary-color);
+  background-repeat: no-repeat;
+  
+  color: var(--text-color);
+  
+  // padding-top: 20rem;
+  // padding-bottom: 5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &  div{
+    margin-bottom: max(2rem, 3vh);
+  }
+
+  &__title{
+    
+    &--name{
+      font-size: 5rem;
+      font-weight: 700;
+    }
+  }
+
+  &__tagline{
+    &--text{
+      font-weight: 200;
+      font-size: 5rem;
+      line-height: 1;
+    }
+  }
+
+  &__info{
+    &--text{
+      font-size: 1.5rem;
+    }
+  }
+
+  @include respond(tab-land) {
+    background-image: url(../assets/header_plate_right.jpg) ;
+   background-size: contain;
+    background-position: top right;
+    text-align: left;
+    padding: 10rem 50vw 5rem 0;
+  }
+
+  @include respond(phone){
+    background-image: url(../assets/header_plate_top.jpg) ;
+    background-size: cover;
+    background-position: top;
+    padding: $padding-header-mobile;
+  }
+}
