@@ -3,36 +3,49 @@
 
 .container{
   width: 80%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+
+  @include respond(tab-land) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 .header{
   background-color: var(--primary-color);
-  background-repeat: no-repeat;
-  
+  background-repeat: no-repeat;  
   color: var(--text-color);
-  
-  // padding-top: 20rem;
-  // padding-bottom: 5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background-image: url(../assets/header_plate_top.jpg) ;
+  background-size: cover;
+  background-position: top;
+  padding: $padding-header-mobile;
 
-  &  div{
-    margin-bottom: max(2rem, 3vh);
-  }
 
   &__title{
+    margin-bottom: max(2rem, 3vh);
     
     &--name{
       font-size: 5rem;
       font-weight: 700;
     }
+
+    @include respond(tab-land) {
+      margin-bottom: 10rem;
+    }
+    @include respond(phone){
+      margin-bottom: max(2rem, 3vh);
+    }
   }
 
   &__tagline{
+    margin-bottom: max(2rem, 3vh);
     &--text{
       font-weight: 200;
       font-size: 5rem;
@@ -41,17 +54,19 @@
   }
 
   &__info{
+    margin-bottom: max(2rem, 3vh);
     &--text{
       font-size: 1.5rem;
     }
   }
 
+
   @include respond(tab-land) {
-    background-image: url(../assets/header_plate_right.jpg) ;
-   background-size: contain;
+    background-image: url(../assets/header_plate.jpg) ;
+    background-size: contain;
     background-position: top right;
     text-align: left;
-    padding: 10rem 50vw 5rem 0;
+    padding: 2rem 60vw 15rem 0;
   }
 
   @include respond(phone){
@@ -60,4 +75,10 @@
     background-position: top;
     padding: $padding-header-mobile;
   }
+
+  @include respond(big-desktop){
+    padding: 10rem 0;
+    background-image: url(../assets/header_plate.jpg) ;
+  }
+
 }
