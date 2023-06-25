@@ -1,0 +1,19 @@
+// @forward "base";
+@use "colors" as *;
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    //font-size: 1.2rem;
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom right, var(--primary-color-light), var(--primary-color-dark) );
+    background-size: cover;
+
+    min-height: 100vh;
+    color: var(--color-grey-dark-2);
+}
+
+
+$bp-large: 75rem; // 1200px
+$bp-medium: 56.25rem; // 1100px
+$bp-small: 37.5em; // 600px

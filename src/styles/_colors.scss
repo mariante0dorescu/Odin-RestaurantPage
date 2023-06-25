@@ -1,0 +1,14 @@
+// @forward "colors";
+// colors
+:root{
+    --primary-color: #111111;
+    --primary-color-light: #9b7f69;
+
+    --color-grey-light: #dee2e5;
+    --color-grey-dark: #777;
+    
+
+    --shadow-dark:  0 2rem 6rem rgba(black, 0.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0, 0.06);
+    --line: 1px solid var(--color-grey-light);
+}
