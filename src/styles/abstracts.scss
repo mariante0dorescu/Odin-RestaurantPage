@@ -1,5 +1,6 @@
 $padding-header-mobile: 20rem 0 5rem 0;
-$padding-header-tablet: 3rem 60vh 5rem 0;
+$padding-header-tablet: 3rem 60vh 15rem 0;
+
 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
