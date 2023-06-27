@@ -199,6 +199,93 @@
   }
 }
 
+.dishes{
+  text-align: center;
+  padding: 5rem 0;
+
+  & > .section__title{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Italianno', cursive;
+    font-size: 8rem;
+  }
+}
+
+.food__section{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  &--title{
+    flex: 0 1 100%;
+    font-family: 'Italianno', cursive;
+    font-size: 6rem;
+  }
+
+  &--card{
+    flex: 0 1 30%;
+    //height: 250px;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    // border-radius: 10px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+
+
+    .food-image {
+      height:150px;
+      min-height: 30%;
+      width: 100%;
+      border: 1px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background-size: contain;
+      overflow: hidden;
+
+
+      & > img{
+        background-size: contain;
+      }
+      
+    }
+
+    .food-name{
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .food-description{
+      font-size: 1.6rem;
+    }
+
+    .food-price{
+      position: relative;
+      font-style: italic;
+      font-size: 1.2rem;
+      font-weight: 400;
+
+      &::before{
+        content: "";
+        position: absolute;
+        top: -10px;
+        width: 50px;
+        height: 1px;
+        background-color:var(--color-grey-light);
+      }
+    }
+  }
+}
+
 .footer{
   background: var(--primary-color);
   color: var(--text-color);

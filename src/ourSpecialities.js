@@ -1,6 +1,12 @@
 import antipasto from './assets/antipasto.jpg'
 import formaggi from './assets/formaggi.jpg'
 import gamberoni from './assets/gamberoni.jpg'
+import diavola from './assets/diavola.jpg'
+import capriciosa from './assets/capriciosa.jpg'
+import messicana from './assets/messicana.jpg'
+import dolce from './assets/dolce.jpg'
+import gelato from './assets/gelato.jpg'
+import tortino from './assets/tortino.jpg'
 
 const menu = {
   starters: [
@@ -26,19 +32,19 @@ const menu = {
   pizza:[
     {
       name: 'diavola',
-      imageName: "diavola",
+      imageName: diavola,
       price: 100,
       ingredients: 'shrimps, octopus, baby calamary, salad mix, bread',
       },
       {
        name: 'capriciosa',
-        imageName: "capriciosa",
+        imageName: capriciosa,
         price: 200,
         ingredients: 'italian chees selection',
       },
      {
        name: "messicana",
-        imageName: "messicana",
+        imageName: messicana,
         price: 150,
         ingredients: 'italian chees selection',
       },
@@ -46,19 +52,19 @@ const menu = {
   desert:[
     {
       name: 'dolce italiano',
-      imageName: "dolce",
+      imageName: dolce,
       price: 100,
       ingredients: 'cannoli siciliani, panna cotta al cafe',
       },
       {
        name: 'gelato fatto in casa',
-        imageName: "gelato",
+        imageName: gelato,
         price: 200,
         ingredients: 'fresh homemade icecream selection',
       },
      {
        name: "tortino caldo al duetto di ciocolato",
-        imageName: "tortino",
+        imageName: tortino,
         price: 150,
         ingredients: 'white and black chocolate warm cake, ice cream',
       },
@@ -104,9 +110,12 @@ function createfoodCard(object) {
   const card = document.createElement('div');
   card.classList.add('food__section--card');
 
-  const foodImage = new Image();
+  const foodImage = document.createElement('div');
   foodImage.classList.add('food-image');
-  foodImage.src = object.imageName;
+
+  const foodImageSrc = new Image();  
+  foodImageSrc.src = object.imageName;
+  foodImage.appendChild(foodImageSrc)
   card.appendChild(foodImage);
   
   const foodName = document.createElement('h3');
