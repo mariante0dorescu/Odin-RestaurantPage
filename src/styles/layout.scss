@@ -79,7 +79,7 @@
  
 
   @include respond(big-desktop){
-    padding: 10rem 0;
+    padding: 20rem 0;
     background-image: url(../assets/header_plate.jpg) ;
   }
 }
@@ -126,7 +126,7 @@
 
 
 .section__top {
-  transform: translateY(-5vh);
+  transform: translateY(-7vh);
 
   &::after{
     position: absolute;
@@ -142,7 +142,7 @@
 }
 
 .section__bottom {
-  transform: translateY(5vh);
+  transform: translateY(7vh);
 
   &::after{
     position: absolute;
