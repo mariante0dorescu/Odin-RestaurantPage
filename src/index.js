@@ -33,13 +33,15 @@ function website(){
 website();
 
 const navBar = document.getElementsByClassName('navbar__btn');
-const main = document.querySelector('.main');
-const mainContainer = main.querySelector('.container');
+const main = document.querySelector('.main').querySelector('.container');
+console.log(main)
 
   
 for(const button of navBar) {
   button.addEventListener('click', (e) => {
-    mainContainer.innerText = e.target.id;
+    const func = ["aboutus", "ourspecialities", "contact"]
+    const calledFunc = e.target.id;
+
   })
 }
 
