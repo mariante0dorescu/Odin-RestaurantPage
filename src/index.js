@@ -1,47 +1,45 @@
 import './styles/main.scss';
 import createHeader from './header';
 import createFooter from "./footer"
-
-// function component() {
-//   const element = document.createElement('div');
-//   element.innerHTML = 'test';
-//   console.log(element)
-//   return element;
-// }
-// component()
-// document.body.appendChild(component());
-
-function createMain() {
-  const main = document.createElement("main");
-  main.classList.add("main");
-
-  const container = document.createElement('div');
-  container.classList.add('container');
-  
-  main.appendChild(container);
-
-  return main;
-}
+import aboutUs from './aboutUs'
+import ourSpecialities from './ourSpecialities'
+import contactForm from './contactForm'
 
 function website(){
+
+  const  createMain = () => {
+    const main = document.createElement("main");
+    main.classList.add("main");
+  
+    const container = document.createElement('div');
+    container.classList.add('container');
+    
+    main.appendChild(container);
+  
+    return main;
+  }
+
   const documentBody = document.querySelector('body');
   documentBody.appendChild(createHeader())
   documentBody.appendChild(createMain())
   documentBody.appendChild(createFooter())
+
+  const navBar = document.getElementsByClassName('navbar__btn');
+    
+  for(const button of navBar) {
+    button.addEventListener('click', (e) => {
+      const calledFunc = e.target.id;
+      const customFunc = {
+        aboutus: aboutUs,
+        ourspecialities: ourSpecialities,
+        contact: contactForm,
+      }
+      return customFunc[calledFunc]();    
+    })
+  }
+  aboutUs()
 }
 
 website();
 
-const navBar = document.getElementsByClassName('navbar__btn');
-const main = document.querySelector('.main').querySelector('.container');
-console.log(main)
-
-  
-for(const button of navBar) {
-  button.addEventListener('click', (e) => {
-    const func = ["aboutus", "ourspecialities", "contact"]
-    const calledFunc = e.target.id;
-
-  })
-}
 
