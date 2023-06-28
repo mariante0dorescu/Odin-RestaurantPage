@@ -5,6 +5,7 @@
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
+  transition: all 3ms ease-in-out;
 
   @include respond(tab-land) {
     display: flex;
@@ -211,6 +212,29 @@
     font-size: 8rem;
     padding: 3rem 0;
   }
+
+  &  .section__subtitle{
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    font-family: 'Italianno', cursive;
+    font-size: 5rem;
+    padding: 1rem 1rem;
+  }
+
+  & .section__hours{
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Italianno', cursive;
+    font-size: 3.25rem;
+    padding: 1rem 1rem;
+  }
+
+  & .section__map{
+    margin-bottom: 5rem;
+  }
 }
 
 .food__section{
@@ -289,6 +313,51 @@
       }
     }
   }
+}
+
+.contact__section{
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  &--form{
+    display: flex;
+    flex-direction: column;
+
+  & > input,
+  & > textarea{
+    font-family: inherit;
+    padding: 1rem;
+    outline: none;
+    border: 1px solid var(--color-grey-light);
+    margin-bottom: 3rem;
+    }
+  }
+
+  .submitBtn{
+    align-self: center;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 2rem 3rem;
+    outline: none;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    margin-bottom: 3rem;
+  }
+
+  .submitBtn:hover,
+  .submitBtn:active{
+    transform: translateY(-5px);
+    background: var(--primary-color);
+}
 }
 
 .footer{
