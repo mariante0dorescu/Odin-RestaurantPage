@@ -74,7 +74,6 @@ const menu = {
 export default function ourSpecialities () {
 
   const main = document.querySelector('.main').querySelector('.container');
-  main.classList.add('dishes')
   main.innerHTML = "";
 
   const sectionTitle = document.createElement('h1');
